@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import { hasLocale } from 'next-intl';
 import { routing } from '@/lib/i18n/routing';
 import "../globals.css";
-import Header from "@/components/header";
+import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
 
 const geistSans = Geist({
@@ -60,8 +60,8 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          <main className="min-h-screen pt-20">
+          <Sidebar />
+          <main className="min-h-screen pt-20 lg:pt-0 lg:ml-64">
             {children}
           </main>
           <Footer />

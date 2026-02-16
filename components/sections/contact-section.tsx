@@ -1,17 +1,6 @@
-import { Metadata } from "next";
 import { Mail, Github, BookOpen } from "lucide-react";
 import Card from "@/components/ui/card";
 import Link from "next/link";
-import { setRequestLocale } from 'next-intl/server';
-
-export const metadata: Metadata = {
-  title: "연락처 - Portfolio",
-  description: "연락처 및 소셜 미디어",
-};
-
-type Props = {
-  params: Promise<{locale: string}>;
-};
 
 const contacts = [
   {
@@ -37,21 +26,17 @@ const contacts = [
   },
 ];
 
-export default async function ContactPage({ params }: Props) {
-  const {locale} = await params;
-  setRequestLocale(locale);
+export default function ContactSection() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-green-50/30 to-blue-50/30">
-      <div className="mx-auto max-w-4xl px-6 py-24">
-        {/* Page Header */}
-        <div className="mb-16 text-center animate-fade-in-up">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">연락처</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            함께 일하고 싶거나 궁금한 점이 있으시면 언제든지 연락주세요
-          </p>
+    <div className="mx-auto max-w-6xl px-6 py-12">
+      <section className="mb-20">
+        <div className="flex items-center gap-3 mb-8">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-blue-500 shadow-lg">
+            <Mail className="h-6 w-6 text-white" />
+          </div>
+          <h2 className="text-3xl font-bold text-gray-900">연락처</h2>
         </div>
 
-        {/* Contact Cards */}
         <div className="space-y-6">
           {contacts.map((contact) => {
             const Icon = contact.icon;
@@ -94,13 +79,12 @@ export default async function ContactPage({ params }: Props) {
           })}
         </div>
 
-        {/* Additional Message */}
         <div className="mt-12 text-center">
           <Card gradient="green">
             <div className="space-y-3 py-4">
-              <h2 className="text-xl font-bold text-gray-900">
+              <h3 className="text-xl font-bold text-gray-900">
                 협업 및 프로젝트 문의
-              </h2>
+              </h3>
               <p className="text-gray-600">
                 흥미로운 프로젝트나 협업 제안이 있으시다면
                 <br />
@@ -109,7 +93,7 @@ export default async function ContactPage({ params }: Props) {
             </div>
           </Card>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
