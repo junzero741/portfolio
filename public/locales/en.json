@@ -11,6 +11,10 @@
   "home": {
     "welcome": "Welcome to My Portfolio",
     "subtitle": "I am a passionate developer creating amazing web experiences",
+    "meta": {
+      "title": "Junyoung Jeong Portfolio",
+      "description": "Portfolio of Junyoung Jeong, a frontend developer with 5 years of experience who values trust."
+    },
     "description": "Passionate developer creating beautiful and efficient web applications. I enjoy learning new technologies and taking on challenges.",
     "viewProjects": "View Projects",
     "getInTouch": "Get In Touch",

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from '@/lib/i18n/navigation';
 import Image from "next/image";
@@ -7,6 +8,41 @@ import { setRequestLocale } from 'next-intl/server';
 type Props = {
   params: Promise<{locale: string}>;
 };
+
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home" });
+
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  const url = new URL(`/${locale}`, siteUrl);
+
+  return {
+    title: t("meta.title"),
+    description: t("meta.description"),
+    alternates: {
+      canonical: url,
+      languages: {
+        ko: new URL("/ko", siteUrl),
+        en: new URL("/en", siteUrl),
+      },
+    },
+    openGraph: {
+      title: t("meta.title"),
+      description: t("meta.description"),
+      url,
+      siteName: "Portfolio",
+      locale,
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("meta.title"),
+      description: t("meta.description"),
+    },
+  };
+}
 
 export default async function Home({ params }: Props) {
   const {locale} = await params;
