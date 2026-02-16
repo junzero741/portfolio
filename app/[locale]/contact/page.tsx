@@ -1,11 +1,16 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { Mail, Github, BookOpen } from "lucide-react";
 import Card from "@/components/ui/card";
+import Link from "next/link";
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: "연락처 - Portfolio",
   description: "연락처 및 소셜 미디어",
+};
+
+type Props = {
+  params: Promise<{locale: string}>;
 };
 
 const contacts = [
@@ -32,7 +37,9 @@ const contacts = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: Props) {
+  const {locale} = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-green-50/30 to-blue-50/30">
       <div className="mx-auto max-w-4xl px-6 py-24">

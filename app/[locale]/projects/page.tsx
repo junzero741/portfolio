@@ -1,13 +1,20 @@
 import { Metadata } from "next";
 import { projects } from "@/data/projects";
 import ProjectsGrid from "@/components/projects-grid";
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: "프로젝트 - Portfolio",
   description: "주요 프로젝트 및 성과",
 };
 
-export default function ProjectsPage() {
+type Props = {
+  params: Promise<{locale: string}>;
+};
+
+export default async function ProjectsPage({ params }: Props) {
+  const {locale} = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-purple-50/30 to-blue-50/30">
       <div className="mx-auto max-w-6xl px-6 py-24">

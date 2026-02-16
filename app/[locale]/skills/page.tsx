@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { skillCategories } from "@/data/skills";
 import Card from "@/components/ui/card";
 import Badge from "@/components/ui/badge";
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: "기술 스택 - Portfolio",
   description: "보유 기술 스택 및 숙련도",
+};
+
+type Props = {
+  params: Promise<{locale: string}>;
 };
 
 const levelColor: Record<string, string> = {
@@ -14,7 +19,9 @@ const levelColor: Record<string, string> = {
   Beginner: "text-orange-600",
 };
 
-export default function SkillsPage() {
+export default async function SkillsPage({ params }: Props) {
+  const {locale} = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-orange-50/30 to-pink-50/30">
       <div className="mx-auto max-w-6xl px-6 py-24">

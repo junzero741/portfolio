@@ -1,0 +1,91 @@
+{
+  "navigation": {
+    "home": "홈",
+    "experience": "경력/학력",
+    "projects": "프로젝트",
+    "activities": "활동",
+    "skills": "기술 스택",
+    "blog": "블로그",
+    "contact": "연락처"
+  },
+  "home": {
+    "welcome": "포트폴리오에 오신 것을 환영합니다",
+    "subtitle": "저는 멋진 웹 경험을 만드는 열정적인 개발자입니다",
+    "description": "열정적인 개발자로서 아름답고 효율적인 웹 애플리케이션을 만듭니다. 새로운 기술을 배우고 도전하는 것을 즐깁니다.",
+    "viewProjects": "프로젝트 보기",
+    "getInTouch": "연락하기",
+    "cards": {
+      "experience": {
+        "title": "경력/학력",
+        "description": "전문적인 경험과 학습 여정"
+      },
+      "projects": {
+        "title": "프로젝트",
+        "description": "진행한 프로젝트들"
+      },
+      "skills": {
+        "title": "기술 스택",
+        "description": "사용 가능한 기술들"
+      },
+      "blog": {
+        "title": "블로그",
+        "description": "개발 관련 글"
+      }
+    }
+  },
+  "experience": {
+    "title": "경력 & 학력",
+    "description": "전문적인 경험과 학습 여정을 소개합니다",
+    "workExperience": "경력",
+    "education": "학력"
+  },
+  "projects": {
+    "title": "프로젝트",
+    "description": "실제 서비스에 기여한 프로젝트와 주요 성과를 소개합니다"
+  },
+  "skills": {
+    "title": "기술 스택",
+    "description": "프론트엔드 중심의 기술 스택과 협업 도구를 소개합니다",
+    "note": "프론트엔드 기술을 메인으로 하며, 사이드 프로젝트를 통해 백엔드 영역까지 확장하고 있습니다."
+  },
+  "activities": {
+    "title": "활동",
+    "description": "외부 활동, 수상, 자격증 정보를 정리했습니다",
+    "externalActivities": "외부 활동",
+    "activitiesDesc": "컨퍼런스, 발표, 커뮤니티 활동 등",
+    "awards": "수상",
+    "awardsDesc": "수상 내역 및 주요 성과",
+    "certificates": "자격증",
+    "certificatesDesc": "보유 자격증 및 어학 성적",
+    "noData": "정보가 아직 없습니다.",
+    "comingSoon": "추가 예정입니다.",
+    "viewLink": "링크 보기"
+  },
+  "blog": {
+    "title": "블로그",
+    "description": "개발하면서 배운 것들을 기록하고 공유합니다",
+    "blogTitle": "TIL 개발 블로그",
+    "blogDesc": "개발하면서 학습한 내용, 트러블슈팅, 기술 스택에 대한 인사이트를 공유하는 블로그입니다.",
+    "visitBlog": "블로그 방문하기",
+    "blogAddress": "블로그 주소:",
+    "technicalArticles": "기술 아티클",
+    "technicalArticlesDesc": "실무에서 사용한 기술과 트러블슈팅 경험",
+    "learningRecord": "학습 기록",
+    "learningRecordDesc": "새로운 기술 학습 과정과 인사이트",
+    "developmentLog": "개발 일지",
+    "developmentLogDesc": "프로젝트 개발 과정과 회고"
+  },
+  "contact": {
+    "title": "연락처",
+    "description": "함께 일하고 싶거나 궁금한 점이 있으시면 언제든지 연락주세요",
+    "collaboration": "협업 및 프로젝트 문의",
+    "collaborationDesc": "흥미로운 프로젝트나 협업 제안이 있으시다면 이메일로 연락 주시면 빠르게 답변드리겠습니다.",
+    "email": "이메일",
+    "github": "깃허브",
+    "blog": "블로그"
+  },
+  "footer": {
+    "copyright": "© {year} Portfolio. All rights reserved."
+  }
+}
+

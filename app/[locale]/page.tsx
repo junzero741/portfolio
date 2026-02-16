@@ -1,8 +1,19 @@
 import { ArrowRight, Sparkles } from "lucide-react";
-import Link from "next/link";
+import { Link } from '@/lib/i18n/navigation';
 import Image from "next/image";
+import { getTranslations } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 
-export default function Home() {
+type Props = {
+  params: Promise<{locale: string}>;
+};
+
+export default async function Home({ params }: Props) {
+  const {locale} = await params;
+  setRequestLocale(locale);
+  
+  const t = await getTranslations();
+
   return (
     <div className="relative overflow-hidden bg-white">
       {/* Gradient Background */}
@@ -17,21 +28,15 @@ export default function Home() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-50 to-pink-50 px-4 py-2 text-sm font-medium text-purple-700 ring-1 ring-purple-500/10">
             <Sparkles className="h-4 w-4" />
-            <span>포트폴리오 웹사이트에 오신 것을 환영합니다</span>
+            <span>{t('home.welcome')}</span>
           </div>
           
           <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl mb-6 animate-fade-in-up">
-            안녕하세요, <br />
-            <span className="gradient-blue-purple gradient-text">
-              정준영
-            </span>
-            입니다
+            정준영
           </h1>
           
           <p className="mt-6 text-lg leading-8 text-gray-600 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
-            열정적인 개발자로서 아름답고 효율적인 웹 애플리케이션을 만듭니다.
-            <br />
-            새로운 기술을 배우고 도전하는 것을 즐깁니다.
+            {t('home.description')}
           </p>
           
           <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
@@ -39,14 +44,14 @@ export default function Home() {
               href="/projects"
               className="group rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:shadow-xl transition-all hover:scale-105 flex items-center gap-2"
             >
-              프로젝트 보기
+              {t('home.viewProjects')}
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/contact"
               className="text-sm font-semibold leading-6 text-gray-900 hover:text-purple-600 transition-colors"
             >
-              연락하기 <span aria-hidden="true">→</span>
+              {t('home.getInTouch')} <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
@@ -57,26 +62,26 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
             {
-              title: "경력/학력",
-              description: "전문적인 경력과 학력",
+              title: t('home.cards.experience.title'),
+              description: t('home.cards.experience.description'),
               href: "/experience",
               gradient: "from-blue-500 to-cyan-500",
             },
             {
-              title: "프로젝트",
-              description: "진행한 프로젝트들",
+              title: t('home.cards.projects.title'),
+              description: t('home.cards.projects.description'),
               href: "/projects",
               gradient: "from-purple-500 to-pink-500",
             },
             {
-              title: "기술 스택",
-              description: "사용 가능한 기술들",
+              title: t('home.cards.skills.title'),
+              description: t('home.cards.skills.description'),
               href: "/skills",
               gradient: "from-orange-500 to-yellow-500",
             },
             {
-              title: "블로그",
-              description: "개발 관련 글",
+              title: t('home.cards.blog.title'),
+              description: t('home.cards.blog.description'),
               href: "/blog",
               gradient: "from-green-500 to-emerald-500",
             },
@@ -99,5 +104,3 @@ export default function Home() {
     </div>
   );
 }
-
-        

@@ -3,11 +3,16 @@ import { activities, awards, certificates } from "@/data/activities";
 import Card from "@/components/ui/card";
 import Badge from "@/components/ui/badge";
 import { Award, BadgeCheck, Users } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/lib/i18n/navigation";
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: "활동 - Portfolio",
   description: "외부 활동, 수상, 자격증 정보",
+};
+
+type Props = {
+  params: Promise<{locale: string}>;
 };
 
 function SectionHeader({
@@ -43,7 +48,11 @@ function EmptyState({ label }: { label: string }) {
   );
 }
 
-export default function ActivitiesPage() {
+export default async function ActivitiesPage(
+  { params }: Props
+) {
+  const {locale} = await params;
+  setRequestLocale(locale);
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-pink-50/30 to-purple-50/30">
       <div className="mx-auto max-w-6xl px-6 py-24">

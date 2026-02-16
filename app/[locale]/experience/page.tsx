@@ -2,13 +2,23 @@ import { Metadata } from "next";
 import { experiences } from "@/data/experience";
 import ExperienceTimeline from "@/components/experience-timeline";
 import { Briefcase, GraduationCap } from "lucide-react";
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: "경력/학력 - Portfolio",
   description: "경력 및 학력 정보",
 };
 
-export default function ExperiencePage() {
+type Props = {
+  params: Promise<{locale: string}>;
+};
+
+export default async function ExperiencePage(
+  {params}: Props
+) {
+  const {locale} = await params;
+  setRequestLocale(locale);
+
   const workExperiences = experiences.filter((item) => item.type === "work");
   const educationExperiences = experiences.filter((item) => item.type === "education");
 
