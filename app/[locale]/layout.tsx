@@ -9,6 +9,7 @@ import { routing } from '@/lib/i18n/routing';
 import "../globals.css";
 import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -56,6 +57,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="scroll-smooth">
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID || 'GTM-XXXXXXX'} />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
