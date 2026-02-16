@@ -1,30 +1,24 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Mail, BookOpen } from "lucide-react";
 import Link from "next/link";
 
 const socialLinks = [
   {
     name: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/junzero741",
     icon: Github,
     color: "hover:text-gray-900",
   },
   {
-    name: "LinkedIn",
-    href: "https://linkedin.com",
-    icon: Linkedin,
-    color: "hover:text-blue-600",
-  },
-  {
-    name: "Twitter",
-    href: "https://twitter.com",
-    icon: Twitter,
-    color: "hover:text-sky-500",
+    name: "Blog",
+    href: "https://til-dev.tistory.com/",
+    icon: BookOpen,
+    color: "hover:text-purple-600",
   },
   {
     name: "Email",
-    href: "mailto:your.email@example.com",
+    href: "mailto:junzero741@gmail.com",
     icon: Mail,
-    color: "hover:text-purple-600",
+    color: "hover:text-orange-600",
   },
 ];
 
