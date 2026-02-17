@@ -30,10 +30,9 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
     <div className="space-y-8">
       {/* Filters */}
       <div className="flex flex-wrap items-center gap-3">
-        <div className="flex items-center gap-2 text-sm font-semibold text-gray-700">
+        {/* <div className="flex items-center gap-2 text-sm font-semibold text-white">
           <Filter className="h-4 w-4" />
-          필터
-        </div>
+        </div> */}
         {filters.map((filter) => (
           <button
             key={filter}
@@ -42,8 +41,8 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
             className={cn(
               "rounded-full px-4 py-2 text-sm font-medium transition-all",
               activeFilter === filter
-                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md"
-                : "bg-white text-gray-600 hover:text-purple-600 hover:shadow-sm"
+                ? "bg-black text-white shadow-md"
+                : "bg-white text-black hover:text-gray-600 hover:shadow-sm"
             )}
           >
             {filter}
@@ -58,23 +57,23 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
             <div className="space-y-4">
               {/* Header */}
               <div>
-                <div className="flex items-center gap-2 text-sm text-gray-500">
+                <div className="flex items-center gap-2 text-sm text-gray-400">
                   <span>{project.company}</span>
                   <span>•</span>
                   <span>{project.period}</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mt-1">
+                <h3 className="text-2xl font-bold text-white mt-1">
                   {project.title}
                 </h3>
                 {project.subtitle && (
-                  <p className="text-sm text-gray-600 mt-1">
+                  <p className="text-sm text-gray-400 mt-1">
                     {project.subtitle}
                   </p>
                 )}
               </div>
 
               {/* Summary */}
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed">
                 {project.summary}
               </p>
 
@@ -89,13 +88,13 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
 
               {/* Roles */}
               <div>
-                <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                <h4 className="text-sm font-semibold text-white mb-2">
                   담당 역할
                 </h4>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <ul className="space-y-1 text-sm text-gray-400">
                   {project.roles.map((role, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="text-purple-600 mt-0.5">•</span>
+                      <span className="text-gray-400 mt-0.5">•</span>
                       <span>{role}</span>
                     </li>
                   ))}
@@ -104,13 +103,13 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
 
               {/* Achievements */}
               <div>
-                <h4 className="text-sm font-semibold text-gray-900 mb-2">
+                <h4 className="text-sm font-semibold text-white mb-2">
                   성과
                 </h4>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <ul className="space-y-1 text-sm text-gray-400">
                   {project.achievements.map((achievement, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="text-green-600 mt-0.5">•</span>
+                      <span className="text-gray-400 mt-0.5">•</span>
                       <span>{achievement}</span>
                     </li>
                   ))}
@@ -126,7 +125,7 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-semibold text-purple-600 hover:text-purple-700"
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-gray-300 hover:text-white"
                     >
                       {link.label}
                       <ExternalLink className="h-4 w-4" />

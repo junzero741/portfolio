@@ -8,7 +8,6 @@ import { hasLocale } from 'next-intl';
 import { routing } from '@/lib/i18n/routing';
 import "../globals.css";
 import Sidebar from "@/components/sidebar";
-import Footer from "@/components/footer";
 import { GoogleTagManager } from "@next/third-parties/google";
 
 const geistSans = Geist({
@@ -66,7 +65,6 @@ export default async function RootLayout({
           <main className="min-h-screen pt-20 lg:pt-0 lg:ml-64">
             {children}
           </main>
-          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

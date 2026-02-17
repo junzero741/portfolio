@@ -13,10 +13,10 @@ const Badge = forwardRef<HTMLSpanElement, BadgeProps>(
         className={cn(
           "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium transition-all",
           {
-            "bg-gray-100 text-gray-800 hover:bg-gray-200": variant === "default",
-            "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md":
+            "bg-gray-800 text-gray-300 hover:bg-gray-700": variant === "default",
+            "bg-white text-black shadow-md":
               variant === "gradient",
-            "border border-gray-300 bg-transparent text-gray-700 hover:border-purple-600 hover:text-purple-600":
+            "border border-gray-700 bg-transparent text-gray-400 hover:border-gray-500 hover:text-gray-300":
               variant === "outline",
           },
           className

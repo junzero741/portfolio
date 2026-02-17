@@ -9,10 +9,10 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, gradient = "none", hover = true, children, ...props }, ref) => {
     const gradientClasses = {
-      blue: "from-blue-500 to-cyan-500",
-      purple: "from-purple-500 to-pink-500",
-      orange: "from-orange-500 to-yellow-500",
-      green: "from-green-500 to-emerald-500",
+      blue: "from-gray-800 to-gray-700",
+      purple: "from-gray-800 to-gray-700",
+      orange: "from-gray-800 to-gray-700",
+      green: "from-gray-800 to-gray-700",
       none: "",
     };
 
@@ -20,7 +20,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "group relative overflow-hidden rounded-2xl bg-white p-6 shadow-md transition-all",
+          "group relative overflow-hidden rounded-2xl bg-gray-900 p-6 shadow-md transition-all border border-gray-800",
           hover && "hover:shadow-xl hover:scale-105",
           className
         )}

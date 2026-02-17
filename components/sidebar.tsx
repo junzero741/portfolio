@@ -1,93 +1,84 @@
 "use client";
 
-import { useState } from "react";
-import { Menu, X, Globe } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { Link, usePathname, useRouter } from "@/lib/i18n/navigation";
+import { cn } from "@/lib/utils";
+import { BookOpen, Github, Mail } from "lucide-react";
 import { useLocale, useTranslations } from 'next-intl';
+import { useEffect, useState } from "react";
+
+const socialLinks = [
+  {
+    name: "GitHub",
+    href: "https://github.com/junzero741",
+    icon: Github,
+    color: "hover:text-gray-400",
+  },
+  {
+    name: "Blog",
+    href: "https://til-dev.tistory.com/",
+    icon: BookOpen,
+    color: "hover:text-gray-400",
+  },
+  {
+    name: "Email",
+    href: "mailto:junzero741@gmail.com",
+    icon: Mail,
+    color: "hover:text-gray-400",
+  },
+];
 
 const navigation = [
-  { href: "/", key: "navigation.home" },
+  { href: "/#experience", key: "navigation.experience", id: "experience" },
+  { href: "/#projects", key: "navigation.projects", id: "projects" },
+  { href: "/#skills", key: "navigation.skills", id: "skills" },
 ];
 
 export default function Sidebar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [localeMenuOpen, setLocaleMenuOpen] = useState(false);
+
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations();
+  const [activeSection, setActiveSection] = useState<string>("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navigation.map(nav => nav.id);
+      const scrollPosition = window.scrollY + 100; // offset for better detection
+      
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    handleScroll(); // Initial check
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
 
   const handleLocaleChange = (newLocale: 'en' | 'ko') => {
     if (locale !== newLocale) {
       router.push(pathname, { locale: newLocale });
     }
-    setLocaleMenuOpen(false);
   };
 
   return (
     <>
-      {/* Mobile menu button - Fixed at top left */}
-      <div className="lg:hidden fixed top-4 left-4 z-50 flex gap-2">
-        {/* Language selector */}
-        <div className="relative">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-100"
-            onClick={() => setLocaleMenuOpen(!localeMenuOpen)}
-          >
-            <Globe className="h-6 w-6" />
-          </button>
-          {localeMenuOpen && (
-            <div className="absolute left-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-gray-200">
-              <button
-                onClick={() => handleLocaleChange('en')}
-                className={cn(
-                  "block w-full text-left px-4 py-2 text-sm font-medium rounded-t-md",
-                  locale === 'en'
-                    ? "bg-purple-50 text-purple-600"
-                    : "text-gray-900 hover:bg-gray-50"
-                )}
-              >
-                English
-              </button>
-              <button
-                onClick={() => handleLocaleChange('ko')}
-                className={cn(
-                  "block w-full text-left px-4 py-2 text-sm font-medium rounded-b-md",
-                  locale === 'ko'
-                    ? "bg-purple-50 text-purple-600"
-                    : "text-gray-900 hover:bg-gray-50"
-                )}
-              >
-                한국어
-              </button>
-            </div>
-          )}
-        </div>
-
-        {/* Menu button */}
-        <button
-          type="button"
-          className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span className="sr-only">{locale === 'en' ? 'Open menu' : '메뉴 열기'}</span>
-          {mobileMenuOpen ? (
-            <X className="h-6 w-6" aria-hidden="true" />
-          ) : (
-            <Menu className="h-6 w-6" aria-hidden="true" />
-          )}
-        </button>
-      </div>
-
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:fixed lg:left-0 lg:top-0 lg:flex lg:flex-col lg:h-screen lg:w-64 lg:bg-white/80 lg:backdrop-blur-md lg:border-r lg:border-gray-100 lg:z-40">
+      <aside className="hidden lg:fixed lg:left-0 lg:top-0 lg:flex lg:flex-col lg:h-screen lg:w-64 lg:bg-black/80 lg:backdrop-blur-md lg:border-r lg:border-gray-900 lg:z-40">
         {/* Logo */}
-        <div className="flex items-center justify-center p-6 border-b border-gray-100">
+        <div className="flex items-center justify-center p-6">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Portfolio
+            <span className="text-2xl font-bold text-white">
+              Jung Junyoung
             </span>
           </Link>
         </div>
@@ -98,72 +89,70 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900 hover:text-purple-600 transition-colors"
+              className={cn(
+                "text-sm font-semibold leading-6 transition-colors block w-full text-center px-4 py-2 rounded-md",
+                activeSection === item.id
+                  ? "bg-gray-700 text-white"
+                  : "text-gray-400 hover:text-white hover:bg-gray-800"
+              )}
             >
               {t(item.key)}
             </Link>
           ))}
+        </div>
 
-          {/* Language selector for desktop */}
-          <div className="relative">
+         {/* Language selector for desktop */}
+        <div className="relative w-full flex justify-center py-4">
             <button
-              type="button"
-              className="inline-flex items-center gap-1 px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
-              onClick={() => setLocaleMenuOpen(!localeMenuOpen)}
+              onClick={() => handleLocaleChange('en')}
+              className={cn(
+                "block w-full text-left px-4 py-2 text-sm font-medium",
+                locale === 'en'
+                  ? "bg-gray-700 text-white"
+                  : "text-gray-300 hover:bg-gray-800"
+              )}
             >
-              <Globe className="h-5 w-5" />
-              <span className="text-sm font-semibold uppercase">{locale}</span>
+              EN
             </button>
-            {localeMenuOpen && (
-              <div className="absolute left-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-gray-200">
-                <button
-                  onClick={() => handleLocaleChange('en')}
-                  className={cn(
-                    "block w-full text-left px-4 py-2 text-sm font-medium rounded-t-md",
-                    locale === 'en'
-                      ? "bg-purple-50 text-purple-600"
-                      : "text-gray-900 hover:bg-gray-50"
-                  )}
-                >
-                  English
-                </button>
-                <button
-                  onClick={() => handleLocaleChange('ko')}
-                  className={cn(
-                    "block w-full text-left px-4 py-2 text-sm font-medium rounded-b-md",
-                    locale === 'ko'
-                      ? "bg-purple-50 text-purple-600"
-                      : "text-gray-900 hover:bg-gray-50"
-                  )}
-                >
-                  한국어
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-      </aside>
-
-      {/* Mobile menu */}
-      <div
-        className={cn(
-          "lg:hidden fixed inset-0 top-16 z-40 bg-white/80 backdrop-blur-md border-b border-gray-100",
-          mobileMenuOpen ? "block" : "hidden"
-        )}
-      >
-        <div className="space-y-2 px-6 pb-6 pt-2">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50"
-              onClick={() => setMobileMenuOpen(false)}
+            <button
+              onClick={() => handleLocaleChange('ko')}
+              className={cn(
+                "block w-full text-left px-4 py-2 text-sm font-medium",
+                locale === 'ko'
+                  ? "bg-gray-700 text-white"
+                  : "text-gray-300 hover:bg-gray-800"
+              )}
             >
-              {t(item.key)}
-            </Link>
-          ))}
+              한국어
+          </button>
         </div>
-      </div>
+
+        {/* Social Links */}
+        <div className="flex flex-col items-center gap-6 px-6 py-8">
+          <div className="flex gap-6">
+            {socialLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={`text-gray-500 transition-colors ${link.color}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="sr-only">{link.name}</span>
+                  <Icon className="h-6 w-6" />
+                </a>
+              );
+            })}
+          </div>
+          <p className="text-center text-xs text-gray-500">
+            © {new Date().getFullYear()} 정준영. All rights reserved.
+          </p>
+        </div>
+
+       
+          </aside>
     </>
   );
 }

@@ -1,17 +1,13 @@
-import type { Metadata } from "next";
-import { getTranslations } from 'next-intl/server';
-import { setRequestLocale } from 'next-intl/server';
+import ExperienceSection from "@/components/sections/experience-section";
+import HeroSection from "@/components/sections/hero-section";
+import ProjectsSection from "@/components/sections/projects-section";
+import SkillsSection from "@/components/sections/skills-section";
+import SummarySection from "@/components/sections/summary-section";
 import { experiences } from "@/data/experience";
 import { projects } from "@/data/projects";
 import { skillCategories } from "@/data/skills";
-import { activities, awards, certificates } from "@/data/activities";
-import HeroSection from "@/components/sections/hero-section";
-import ExperienceSection from "@/components/sections/experience-section";
-import ProjectsSection from "@/components/sections/projects-section";
-import SkillsSection from "@/components/sections/skills-section";
-import ActivitiesSection from "@/components/sections/activities-section";
-import BlogSection from "@/components/sections/blog-section";
-import ContactSection from "@/components/sections/contact-section";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 type Props = {
   params: Promise<{locale: string}>;
@@ -58,22 +54,24 @@ export default async function Home({ params }: Props) {
   
   const t = await getTranslations();
 
-  // Filter experiences by type
-  const workExperiences = experiences.filter((item) => item.type === "work");
-  const educationExperiences = experiences.filter((item) => item.type === "education");
+  // Calculate summary statistics
+  const totalSkills = skillCategories.reduce((acc, category) => acc + category.items.length, 0);
 
   return (
-    <div className="relative overflow-hidden bg-white">
+    <div className="relative overflow-hidden bg-black">
       {/* Hero Section */}
       <HeroSection 
         title={t('home.welcome')} 
-        description={t('home.description')} 
+      />
+
+      {/* Summary Section */}
+      <SummarySection
+        
       />
 
       {/* Experience Section */}
       <ExperienceSection 
-        workExperiences={workExperiences}
-        educationExperiences={educationExperiences}
+        experiences={experiences}
       />
 
       {/* Projects Section */}
@@ -81,19 +79,7 @@ export default async function Home({ params }: Props) {
 
       {/* Skills Section */}
       <SkillsSection skillCategories={skillCategories} />
-
-      {/* Activities Section */}
-      <ActivitiesSection 
-        activities={activities}
-        awards={awards}
-        certificates={certificates}
-      />
-
-      {/* Blog Section */}
-      <BlogSection />
-
-      {/* Contact Section */}
-      <ContactSection />
+      
     </div>
   );
 }
