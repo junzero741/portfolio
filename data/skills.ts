@@ -1,42 +1,48 @@
 export interface SkillItem {
   name: string;
-  level: "Advanced" | "Intermediate" | "Beginner";
+  icon: string;
   description?: string;
 }
 
 export interface SkillCategory {
   title: string;
-  gradient: "blue" | "purple" | "orange" | "green";
+  
   items: SkillItem[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
     title: "Frontend",
-    gradient: "purple",
     items: [
-      { name: "JavaScript", level: "Advanced" },
-      { name: "TypeScript", level: "Advanced" },
-      { name: "React", level: "Advanced" },
-      { name: "Next.js", level: "Advanced" },
+      { name: "TS", icon: "/icons/typescript.svg",  },
+      { name: "JS", icon: "/icons/javascript.svg" },
+      { name: "React", icon: "/icons/react.svg" },
+      { name: "Next", icon: "/icons/nextdotjs.svg" },
     ],
   },
   {
-    title: "Tools & Collaboration",
-    gradient: "blue",
+    title: "Backend / Infra",
     items: [
-      { name: "Git", level: "Advanced" },
-      { name: "GitHub", level: "Advanced" },
-      { name: "Vercel", level: "Intermediate" },
+      { name: "Supabase", icon: "/icons/supabase.svg" },
+      { name: "Docker", icon: "/icons/docker.svg" },
+      { name: "AWS", icon: "/icons/aws.svg" },
+      
+      
     ],
   },
   {
-    title: "AI & Productivity",
-    gradient: "green",
+    title: "CI/CD",
     items: [
-      { name: "Gemini", level: "Intermediate" },
-      { name: "GitHub Copilot", level: "Intermediate" },
-      { name: "Claude", level: "Intermediate" },
+      { name: "Git", icon: "/icons/git.svg" },
+      { name: "GitHub", icon: "/icons/github.svg" },
+      { name: "ArgoCD", icon: "/icons/argo.svg" },
     ],
   },
+  {
+    title: "AI Tools",
+    items: [
+      { name: "Gemini", icon: "/icons/gemini.svg" },
+      { name: "Claude", icon: "/icons/claude.svg" },
+    ],
+  }
 ];

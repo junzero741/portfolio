@@ -1,7 +1,6 @@
 import ExperienceSection from "@/components/sections/experience-section";
 import HeroSection from "@/components/sections/hero-section";
 import ProjectsSection from "@/components/sections/projects-section";
-import SkillsSection from "@/components/sections/skills-section";
 import SummarySection from "@/components/sections/summary-section";
 import { experiences } from "@/data/experience";
 import { projects } from "@/data/projects";
@@ -77,8 +76,6 @@ export default async function Home({ params }: Props) {
       {/* Projects Section */}
       <ProjectsSection items={projects} />
 
-      {/* Skills Section */}
-      <SkillsSection skillCategories={skillCategories} />
       
     </div>
   );

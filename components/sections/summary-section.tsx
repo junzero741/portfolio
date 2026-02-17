@@ -32,7 +32,7 @@ export default function SummarySection({
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center">
 		<div className="animate-fade-in-up" style={{ animationDelay: `${0 * 0.1}s` }}>
 		<SummaryCard>
               <h3 className="text-xl font-bold text-white mb-2">{t("home.hello")}</h3>
@@ -40,7 +40,7 @@ export default function SummarySection({
 		</SummaryCard>
 		</div>
         {/*  네비게이션 카드 */}
-        <div className="animate-fade-in-up" style={{ animationDelay: `${1 * 0.1}s` }}>
+        <div className="animate-fade-in-up flex flex-col gap-6" style={{ animationDelay: `${1 * 0.1}s` }}>
           <SummaryCard>
 			<div className="flex flex-col gap-3">
 
@@ -56,11 +56,7 @@ export default function SummarySection({
 				</div>
 			</div>
           </SummaryCard>
-        </div>
-
-        {/* 블로그 카드 */}
-        <div className="animate-fade-in-up" style={{ animationDelay: `${2 * 0.1}s` }}>
-          <SummaryCard>
+		    <SummaryCard>
             <div className="flex flex-col gap-3">
               <Link target="_blank" href="https://til-dev.tistory.com" className="flex items-center gap-2">
                 <span>준영의 지식 블로그</span>
@@ -74,7 +70,9 @@ export default function SummarySection({
           </SummaryCard>
         </div>
 
-		 {/* 프로필 사진 카드 */}
+       
+
+	 {/* 프로필 사진 카드 */}
         <div className="animate-fade-in-up" style={{ animationDelay: `${4 * 0.1}s` }}>
           <SummaryCard>
             <div className="flex items-center justify-center h-full">
@@ -90,7 +88,53 @@ export default function SummarySection({
             </div>
           </SummaryCard>
         </div>
-      </div>
+
+            <SummaryCard>
+				<div className="flex flex-col gap-3 h-full">
+        {/* 기술 스택 카테고리 */}
+        {skillCategories.map((category, index) => (
+          <div
+            key={category.title}
+            className="animate-fade-in-up"
+            style={{ animationDelay: `${(5 + index) * 0.1}s` }}
+          >
+              <div className="flex flex-col gap-2">
+				<div className="flex items-center justify-between">
+					<h3 className="text-xl font-bold text-white">{category.title}</h3>
+					   <div className="flex flex-wrap gap-1 bg-white w-fit rounded-2xl p-2">
+                  {category.items.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className={`flex items-center p-1 gap-2 rounded-full text-sm font-medium text-white bg-gradient-to-r`}
+                    >
+                      {skill.icon && (
+                        <div className="relative w-5 h-5 ">
+                          <Image
+                            src={skill.icon}
+                            alt={skill.name}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+				</div>
+             
+				<div>
+					{category.items.map((item, index) => (
+						<span key={item.name} className="text-sm text-gray-400">
+							{item.name} {index < category.items.length - 1 && '· '}	
+						</span>
+					))}
+					</div>
+              </div>
+			  </div>
+        ))}
+		</div>
+            </SummaryCard>
+          </div>
     </section>
   );
 }
