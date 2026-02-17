@@ -3,6 +3,7 @@
 import { Link } from "@/lib/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { skillCategories } from "@/data/skills";
+import Image from "next/image";
 
 
 interface SummaryCardProps {
@@ -38,16 +39,22 @@ export default function SummarySection({
               {t("home.description")}
 		</SummaryCard>
 		</div>
-        {/* 경로 네비게이션 카드 */}
+        {/*  네비게이션 카드 */}
         <div className="animate-fade-in-up" style={{ animationDelay: `${1 * 0.1}s` }}>
           <SummaryCard>
-            <nav className="flex flex-wrap text-white items-center gap-2 text-gray-400 text-base font-medium">
-              <span>획기획</span>
-              <span className="mx-1">&gt;</span>
-              <span>비랩트</span>
-              <span className="mx-1">&gt;</span>
-			  <span>???</span>
-            </nav>
+			<div className="flex flex-col gap-3">
+
+				<div className="flex flex-wrap text-white items-center gap-2 text-gray-400 text-base font-medium">
+				<span>획기획</span>
+				<span className="mx-1">&gt;</span>
+				<span>비랩트</span>
+				<span className="mx-1">&gt;</span>
+				<span>???</span>
+				</div>
+				<div className="flex flex-col items-start justify-center h-full ">
+				<span className="text-lg font-bold  rounded-full">+4 Years Frontend Engineer</span>
+				</div>
+			</div>
           </SummaryCard>
         </div>
 
@@ -67,11 +74,19 @@ export default function SummarySection({
           </SummaryCard>
         </div>
 
-        {/* 경력 카드 */}
-        <div className="animate-fade-in-up" style={{ animationDelay: `${3 * 0.1}s` }}>
+		 {/* 프로필 사진 카드 */}
+        <div className="animate-fade-in-up" style={{ animationDelay: `${4 * 0.1}s` }}>
           <SummaryCard>
-            <div className="flex flex-col items-start justify-center h-full ">
-              <span className="text-lg font-bold  rounded-full px-4 py-1 ">+4 Years Frontend Engineer</span>
+            <div className="flex items-center justify-center h-full">
+              <div className="relative w-[240px] aspect-[3/4] overflow-hidden">
+                <Image
+                  src="/profile.PNG"
+                  alt="Profile Picture"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
           </SummaryCard>
         </div>
