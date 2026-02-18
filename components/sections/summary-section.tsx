@@ -26,7 +26,7 @@ export default function SummarySection({}: SummarySectionProps) {
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
         <div className="animate-fade-in-up" style={{ animationDelay: `${0 * 0.1}s` }}>
           <SummaryCard>
             <h3 className="text-xl font-bold text-white mb-2">{t('home.hello')}</h3>
