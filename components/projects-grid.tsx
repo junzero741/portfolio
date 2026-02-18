@@ -138,9 +138,11 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
                   </ul>
                 </div>
               </div>
-              <Button className="mt-4" onClick={() => handleClickShowMore(project)}>
-                {t('showMore')}
-              </Button>
+              {project.screenshots && project.screenshots.length > 0 && (
+                <Button className="mt-4" onClick={() => handleClickShowMore(project)}>
+                  {t('showMore')}
+                </Button>
+              )}
             </div>
           </Card>
         ))}

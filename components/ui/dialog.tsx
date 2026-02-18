@@ -76,7 +76,7 @@ export default function Dialog({ isOpen, onClose, children, className }: DialogP
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 rounded-full bg-zinc-800 hover:bg-zinc-700 text-white transition-colors"
+          className="absolute cursor-pointer top-4 right-4 z-10 p-2 rounded-full bg-zinc-800 hover:bg-zinc-700 text-white transition-colors"
           aria-label="Close modal"
         >
           <X className="h-5 w-5" />
