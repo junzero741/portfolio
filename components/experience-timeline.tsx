@@ -21,13 +21,13 @@ export default function ExperienceTimeline({ items }: ExperienceTimelineProps) {
           style={{ animationDelay: `${index * 0.1}s` }}
         >
           <div className="flex items-start justify-between gap-4">
-            <div className="w-[220px] h-[165px] aspect-[4/3] rounded-2xl">
+            <div className="w-[180px] h-[120px] md:w-[220px] md:h-[160px]">
               <Image
                 src={item.logo}
                 alt={`${item.organization} logo`}
                 width={220}
-                height={165}
-                className="object-contain w-full h-full object-center rounded-2xl bg-white"
+                height={160}
+                className="object-contain w-full h-full rounded-2xl bg-white"
               />
             </div>
             <div className="flex-1">

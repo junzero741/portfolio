@@ -25,7 +25,7 @@ export const experiences: ExperienceItem[] = [
     type: 'work',
     role: 'Frontend Engineer',
     organization: 'company.jejodo.name',
-    website: 'https://jejodo.life',
+    website: 'https://brand04.solutions',
     startDate: '2021-09',
     endDate: '2022-09',
     logo: '/logos/hoikLogo.png',
