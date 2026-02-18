@@ -1,28 +1,30 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import Link from "next/link";
-import { ExternalLink, Filter } from "lucide-react";
-import { ProjectItem } from "@/data/projects";
-import Card from "@/components/ui/card";
 import Badge from "@/components/ui/badge";
+import Card from "@/components/ui/card";
+import { ProjectItem } from "@/data/projects";
 import { cn } from "@/lib/utils";
+import { ExternalLink } from "lucide-react";
+import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { useMemo, useState } from "react";
 
 interface ProjectsGridProps {
   items: ProjectItem[];
 }
 
 export default function ProjectsGrid({ items }: ProjectsGridProps) {
-  const [activeFilter, setActiveFilter] = useState<string>("전체");
+  const t = useTranslations();
+  const [activeFilter, setActiveFilter] = useState<string>(t("projects.filter.all"));
 
   const filters = useMemo(() => {
     const techSet = new Set<string>();
     items.forEach((item) => item.tech.forEach((tech) => techSet.add(tech)));
-    return ["전체", ...Array.from(techSet)];
+    return [t("projects.filter.all"), ...Array.from(techSet)];
   }, [items]);
 
   const filteredItems = useMemo(() => {
-    if (activeFilter === "전체") return items;
+    if (activeFilter === t("projects.filter.all")) return items;
     return items.filter((item) => item.tech.includes(activeFilter));
   }, [activeFilter, items]);
 
@@ -30,9 +32,7 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
     <div className="space-y-8">
       {/* Filters */}
       <div className="flex flex-wrap items-center gap-3">
-        {/* <div className="flex items-center gap-2 text-sm font-semibold text-white">
-          <Filter className="h-4 w-4" />
-        </div> */}
+      
         {filters.map((filter) => (
           <button
             key={filter}
@@ -53,28 +53,29 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {filteredItems.map((project) => (
-          <Card key={project.id} gradient={project.gradient}>
+          <Card key={project.id}>
+            <div className="flex flex-col justify-between h-full">
             <div className="space-y-4">
               {/* Header */}
               <div>
                 <div className="flex items-center gap-2 text-sm text-gray-400">
-                  <span>{project.company}</span>
+                  <span>{t(project.company)}</span>
                   <span>•</span>
                   <span>{project.period}</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mt-1">
-                  {project.title}
+                  {t(project.title)}
                 </h3>
                 {project.subtitle && (
                   <p className="text-sm text-gray-400 mt-1">
-                    {project.subtitle}
+                    {t(project.subtitle)}
                   </p>
                 )}
               </div>
 
               {/* Summary */}
               <p className="text-gray-300 leading-relaxed">
-                {project.summary}
+                {t(project.summary)}
               </p>
 
               {/* Tech Stack */}
@@ -89,13 +90,13 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
               {/* Roles */}
               <div>
                 <h4 className="text-sm font-semibold text-white mb-2">
-                  담당 역할
+                  {t("projects.role")}
                 </h4>
                 <ul className="space-y-1 text-sm text-gray-400">
                   {project.roles.map((role, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-gray-400 mt-0.5">•</span>
-                      <span>{role}</span>
+                      <span>{t(role)}</span>
                     </li>
                   ))}
                 </ul>
@@ -104,19 +105,21 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
               {/* Achievements */}
               <div>
                 <h4 className="text-sm font-semibold text-white mb-2">
-                  성과
+                  {t("projects.achievements")}
                 </h4>
                 <ul className="space-y-1 text-sm text-gray-400">
                   {project.achievements.map((achievement, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-gray-400 mt-0.5">•</span>
-                      <span>{achievement}</span>
+                      <span>{t(achievement)}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Links */}
+           
+            </div>
+               {/* Links */}
               {project.links && project.links.length > 0 && (
                 <div className="flex flex-wrap gap-3 pt-2">
                   {project.links.map((link) => (
@@ -127,13 +130,13 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-sm font-semibold text-gray-300 hover:text-white"
                     >
-                      {link.label}
+                      {t(link.label)}
                       <ExternalLink className="h-4 w-4" />
                     </Link>
                   ))}
                 </div>
               )}
-            </div>
+              </div>
           </Card>
         ))}
       </div>

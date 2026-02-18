@@ -53,8 +53,7 @@ export default async function Home({ params }: Props) {
   
   const t = await getTranslations();
 
-  // Calculate summary statistics
-  const totalSkills = skillCategories.reduce((acc, category) => acc + category.items.length, 0);
+
 
   return (
     <div className="relative overflow-hidden bg-black">

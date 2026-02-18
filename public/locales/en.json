@@ -1,92 +1,94 @@
 {
   "navigation": {
-    "home": "Home",
+    
     "experience": "Experience",
     "projects": "Projects",
-    "activities": "Activities",
-    "skills": "Skills",
-    "blog": "Blog",
-    "contact": "Contact"
+    
+    
+    "blog": "Blog"
+    
   },
   "home": {
-    "welcome": "Welcome to My Portfolio",
-    "subtitle": "I am a passionate developer creating amazing web experiences",
+    "welcome": "Junyoung, a developer who designs trust",
     "meta": {
-      "title": "Junyoung Jeong Portfolio",
-      "description": "Portfolio of Junyoung Jeong, a frontend developer with 5 years of experience who values trust."
+      "title": "Junyoung Portfolio",
+      "description": "Portfolio of Junyoung, a developer who designs trust."
     },
-    "description": "Passionate developer creating beautiful and efficient web applications. I enjoy learning new technologies and taking on challenges.",
-    "viewProjects": "View Projects",
-    "getInTouch": "Get In Touch",
-    "cards": {
-      "experience": {
-        "title": "Experience",
-        "description": "My professional journey and work experience"
-      },
-      "projects": {
-        "title": "Projects",
-        "description": "Here are some of my recent projects"
-      },
-      "skills": {
-        "title": "Skills",
-        "description": "My technical skills and expertise"
-      },
-      "blog": {
-        "title": "Blog",
-        "description": "Read my latest articles and thoughts"
-      }
-    }
+    "hello": "Hi, I'm Junyoung",
+    "description": "Currently seeking new opportunities.\nPreviously, I designed and developed Lottie-based products at a record platform named 'Jejodo', and as a frontend developer at 'Berabt', I designed and developed two B2C service products.\nLeveraging my background in business administration, I focus on problem-solving through collaboration and communication.\nRecently, I am interested in enhancing the technical depth of both the team and myself through AI collaboration."
   },
-  "experience": {
-    "title": "Experience & Education",
-    "description": "Introducing my professional journey and learning experience",
-    "workExperience": "Work Experience",
-    "education": "Education"
+  "company": {
+    "jejodo": {
+      "name": "Jejodo"
+    },
+    "berapt": {
+      "name": "Berapt"
+    
+    }
   },
   "projects": {
     "title": "Projects",
-    "description": "Introducing projects that contributed to actual services and major achievements"
+    "filter": {
+      "all": "All"
+    },
+    "role": "Role",
+    "achievements": "Achievements",
+    "serviceLink": "Service Link",
+    "shoulderPick": {
+      "title": "ShoulderPick",
+      "subTitle": "sub-culture illustration service",
+      "company": "Berapt",
+      "summary": "Launching and maintaining a sub-culture illustration platform",
+      "roles": {
+        "role1": "Introducing React-query and optimizing rendering",
+        "role2": "Optimizing rendering 3D effect card image",
+        "role3": "Implementing metadata and structured data for SEO optimization",
+        "role4": "automating muilti-language translation process",
+        "role5": "Integrating external PG (Naver Pay, Kakao Pay, etc.) payment system"
+      },
+      "achievements": {
+        "achievement1": "30K MAU",
+        "achievement2": "paid membership account of xx",
+        "achievement3": "xx popular webtoon/illustration artists"
+    }
   },
-  "skills": {
-    "title": "Skills",
-    "description": "Introducing frontend-focused technical stacks and collaboration tools",
-    "note": "I mainly focus on frontend technologies and am expanding into backend areas through side projects."
+  "shoulder": {
+    "title": "Shoulder",
+    "subTitle": "Creator Support Website",
+    "company": "Berapt",
+    "summary": "Launching and maintaining a creator support platform",
+    "roles": {
+      "role1": "Introducing billboard.js and implementing charts",
+      "role2": "Designing and implementing common feature modules and design system",
+      "role3": "Introducing Storybook-based component testing",
+      "role4": "Migrating from React to Next.js",
+      "role5": "Developing custom Froala emoji plugin",
+      "role6": "Integrating external PG payment system and optimizing logic"
+    },
+    "achievements": {
+      "achievement1": "200K users",
+      "achievement2": "xx popular webtoon/illustration artists",
+      "achievement3": "monthly paid service revenue of xx"
+  }
   },
-  "activities": {
-    "title": "Activities",
-    "description": "Information about external activities, awards, and certificates",
-    "externalActivities": "External Activities",
-    "activitiesDesc": "Conferences, presentations, community activities, etc.",
-    "awards": "Awards",
-    "awardsDesc": "Award history and major achievements",
-    "certificates": "Certificates",
-    "certificatesDesc": "Certifications held and language proficiency scores",
-    "noData": "No information available yet.",
-    "comingSoon": "Will be added soon.",
-    "viewLink": "View link"
-  },
+    "jejodo": {
+    "title": "Jejodo",
+    "subTitle": "A platform for archiving indie worker records.",
+    "company": "획기획 / Jejodo",
+    "summary": "Web frontend development for an indie worker archiving platform.",
+    "roles": {
+      "role1": "Web frontend solo development",
+      "role2": "Gradual migration from JavaScript to TypeScript",
+      "role3": "Optimizing component rendering using memoization",
+      "role4": "Blockchain integration"
+    },
+    "achievements": {
+      "achievement1": "xxK users"
+  }
+  }
+},
   "blog": {
-    "title": "Blog",
-    "description": "Recording and sharing what I learned while developing",
-    "blogTitle": "TIL Development Blog",
-    "blogDesc": "A blog that shares learning content, troubleshooting, and insights about technology stacks from development experiences.",
-    "visitBlog": "Visit Blog",
-    "blogAddress": "Blog address:",
-    "technicalArticles": "Technical Articles",
-    "technicalArticlesDesc": "Techniques used in actual work and troubleshooting experiences",
-    "learningRecord": "Learning Record",
-    "learningRecordDesc": "New technology learning process and insights",
-    "developmentLog": "Development Log",
-    "developmentLogDesc": "Project development process and retrospectives"
-  },
-  "contact": {
-    "title": "Contact",
-    "description": "Feel free to contact me if you'd like to work together or have any questions",
-    "collaboration": "Collaboration & Project Inquiry",
-    "collaborationDesc": "If you have an interesting project or collaboration proposal, please feel free to contact me via email and I will respond quickly.",
-    "email": "Email",
-    "github": "GitHub",
-    "blog": "Blog"
+    "title": "Junyoung's Knowledge Blog"
   },
   "footer": {
     "copyright": "© {year} Portfolio. All rights reserved."

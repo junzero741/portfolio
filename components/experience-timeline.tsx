@@ -2,12 +2,15 @@
 
 import { ExperienceItem } from "@/data/experience";
 import { ExternalLink } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 interface ExperienceTimelineProps {
   items: ExperienceItem[];
 }
 
 export default function ExperienceTimeline({ items }: ExperienceTimelineProps) {
+  const t = useTranslations()
+  
   return (
     <div className="space-y-6">
       {items.map((item, index) => (
@@ -20,7 +23,7 @@ export default function ExperienceTimeline({ items }: ExperienceTimelineProps) {
             <div className="flex-1">
               <div className="flex items-baseline gap-3 mb-1">
                 <h3 className="text-xl font-bold text-white">
-                  {item.organization}
+                  {t(item.organization)}
                 </h3>
                 {item.website && (
                   <a

@@ -43,23 +43,25 @@ export default function SummarySection({
         <div className="animate-fade-in-up flex flex-col gap-6" style={{ animationDelay: `${1 * 0.1}s` }}>
           <SummaryCard>
 			<div className="flex flex-col gap-3">
-
 				<div className="flex flex-wrap text-white items-center gap-2 text-gray-400 text-base font-medium">
-				<span>획기획</span>
+				<span>{t("company.jejodo.name")}</span>
 				<span className="mx-1">&gt;</span>
-				<span>비랩트</span>
+				<span>{t("company.berapt.name")}</span>
 				<span className="mx-1">&gt;</span>
 				<span>???</span>
 				</div>
-				<div className="flex flex-col items-start justify-center h-full ">
+			</div>
+          </SummaryCard>
+          <SummaryCard>
+
+          <div className="flex flex-col items-start justify-center h-full ">
 				<span className="text-lg font-bold  rounded-full">+4 Years Frontend Engineer</span>
 				</div>
-			</div>
           </SummaryCard>
 		    <SummaryCard>
             <div className="flex flex-col gap-3">
               <Link target="_blank" href="https://til-dev.tistory.com" className="flex items-center gap-2">
-                <span>준영의 지식 블로그</span>
+                <span>{t("blog.title")}</span>
                 <span className="ml-auto">&gt;</span>
               </Link>
               <div className="flex flex-wrap gap-2 mt-1">

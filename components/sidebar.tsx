@@ -30,7 +30,6 @@ const socialLinks = [
 const navigation = [
   { href: "/#experience", key: "navigation.experience", id: "experience" },
   { href: "/#projects", key: "navigation.projects", id: "projects" },
-  { href: "/#skills", key: "navigation.skills", id: "skills" },
 ];
 
 export default function Sidebar() {
