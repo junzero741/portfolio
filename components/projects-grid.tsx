@@ -9,6 +9,8 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
+import ProjectDialog from './project-dialog';
+import Button from './ui/button';
 
 interface ProjectsGridProps {
   items: ProjectItem[];
@@ -17,6 +19,7 @@ interface ProjectsGridProps {
 export default function ProjectsGrid({ items }: ProjectsGridProps) {
   const t = useTranslations();
   const [activeFilter, setActiveFilter] = useState<string>(t('projects.filter.all'));
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   const filters = useMemo(() => {
     const techSet = new Set<string>();
@@ -28,6 +31,10 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
     if (activeFilter === t('projects.filter.all')) return items;
     return items.filter((item) => item.tech.includes(activeFilter));
   }, [activeFilter, items]);
+
+  const handleClickShowMore = (project: ProjectItem) => {
+    setSelectedProject(project);
+  };
 
   return (
     <div className="space-y-8">
@@ -64,7 +71,18 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
                       <span>•</span>
                       <span>{project.period}</span>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mt-1">{t(project.title)}</h3>
+                    <div className="flex items-center">
+                      <Link
+                        key={project.link.href}
+                        href={project.link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-sm font-semibold text-gray-300 hover:text-white"
+                      >
+                        <h3 className="text-2xl font-bold text-white mt-1">{t(project.title)}</h3>
+                        <ExternalLink className="h-4 w-4" />
+                      </Link>
+                    </div>
                     {project.subtitle && (
                       <p className="text-sm text-gray-400 mt-1">{t(project.subtitle)}</p>
                     )}
@@ -120,27 +138,20 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
                   </ul>
                 </div>
               </div>
-              {/* Links */}
-              {project.links && project.links.length > 0 && (
-                <div className="flex flex-wrap gap-3 pt-2">
-                  {project.links.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-semibold text-gray-300 hover:text-white"
-                    >
-                      {t(link.label)}
-                      <ExternalLink className="h-4 w-4" />
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <Button className="mt-4" onClick={() => handleClickShowMore(project)}>
+                {t('showMore')}
+              </Button>
             </div>
           </Card>
         ))}
       </div>
+
+      {/* Dialog */}
+      <ProjectDialog
+        isOpen={!!selectedProject}
+        selectedProject={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </div>
   );
 }

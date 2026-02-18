@@ -12,11 +12,11 @@
       "description": "Portfolio of Junyoung, a developer who designs trust."
     },
     "hello": "Hi, I'm Junyoung",
-    "description": "Currently seeking new opportunities.\nPreviously, I designed and developed Lottie-based products at a record platform named 'Jejodo', and as a frontend developer at 'Berabt', I designed and developed two B2C service products.\nLeveraging my background in business administration, I focus on problem-solving through collaboration and communication.\nRecently, I am interested in enhancing the technical depth of both the team and myself through AI collaboration."
+    "description": "Currently seeking new opportunities.\nPreviously, I designed and developed Lottie-based products at a record platform named 'Jejodo', and as a frontend developer at 'Berapt', I designed and developed two B2C service products.\nLeveraging my background in business administration, I focus on problem-solving through collaboration and communication.\nRecently, I am interested in enhancing the technical depth of both the team and myself through AI collaboration."
   },
   "company": {
     "jejodo": {
-      "name": "Jejodo"
+      "name": "획기획"
     },
     "berapt": {
       "name": "Berapt"
@@ -50,7 +50,7 @@
     },
     "shoulder": {
       "title": "Shoulder",
-      "subTitle": "Creator Support Website",
+      "subTitle": "Creator Support service",
       "company": "Berapt",
       "summary": "Launching and maintaining a creator support platform",
       "roles": {
@@ -68,10 +68,10 @@
       }
     },
     "jejodo": {
-      "title": "획기획",
-      "subTitle": "A platform for archiving indie worker records.",
+      "title": "Jejodo",
+      "subTitle": "A platform for archiving indie-worker records.",
       "company": "획기획",
-      "summary": "Web frontend development for an indie worker archiving platform.",
+      "summary": "Web frontend development for an indie-worker archiving platform.",
       "roles": {
         "role1": "Web frontend solo development",
         "role2": "Gradual migration from JavaScript to TypeScript",
@@ -83,6 +83,7 @@
       }
     }
   },
+  "showMore": "Show More",
   "blog": {
     "title": "Junyoung's Knowledge Blog"
   },

@@ -5,6 +5,11 @@ export interface ProjectLink {
   href: string;
 }
 
+interface ProjectScreenshot {
+  src: string;
+  description: string;
+}
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -16,8 +21,9 @@ export interface ProjectItem {
   tech: string[];
   roles: string[];
   achievements: string[];
-  links?: ProjectLink[];
+  link: ProjectLink;
   logo: string;
+  screenshots?: ProjectScreenshot[];
 }
 
 export const projects: ProjectItem[] = [
@@ -42,8 +48,22 @@ export const projects: ProjectItem[] = [
       'projects.shoulderPick.achievements.achievement2',
       'projects.shoulderPick.achievements.achievement3',
     ],
-    links: [{ label: 'projects.serviceLink', href: 'https://pick.shoulder.fan/' }],
+    link: { label: 'projects.serviceLink', href: 'https://pick.shoulder.fan/' },
     logo: '/logos/shoulderPickLogo.png',
+    screenshots: [
+      {
+        src: '/screenshots/pickMain.gif',
+        description: 'projects.shoulderPick.feedRole',
+      },
+      {
+        src: '/screenshots/pickPostUpload.gif',
+        description: 'projects.shoulderPick.pickPostUploadRole',
+      },
+      {
+        src: '/screenshots/pickShop.gif',
+        description: 'projects.shoulderPick.shopRole',
+      },
+    ],
   },
   {
     id: 'shoulder',
@@ -67,7 +87,7 @@ export const projects: ProjectItem[] = [
       'projects.shoulder.achievements.achievement2',
       'projects.shoulder.achievements.achievement3',
     ],
-    links: [{ label: 'projects.serviceLink', href: 'https://shoulder.fan/' }],
+    link: { label: 'projects.serviceLink', href: 'https://shoulder.fan/' },
     logo: '/logos/shoulderLogo.png',
   },
   {
@@ -86,7 +106,7 @@ export const projects: ProjectItem[] = [
       'projects.jejodo.roles.role4',
     ],
     achievements: ['projects.jejodo.achievements.achievement1'],
-    links: [{ label: 'projects.serviceLink', href: 'https://www.jejodo.life' }],
+    link: { label: 'projects.serviceLink', href: 'https://www.jejodo.life' },
     logo: '/logos/jejodoLogo.jpg',
   },
 ];
