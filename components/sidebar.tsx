@@ -105,7 +105,7 @@ export default function Sidebar() {
               locale === 'en' ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-800',
             )}
           >
-            EN
+            ENGLISH
           </button>
           <button
             onClick={() => handleLocaleChange('ko')}
@@ -142,6 +142,47 @@ export default function Sidebar() {
           </p>
         </div>
       </aside>
+
+      {/* Mobile Language Selector - Top Right */}
+      <div className="fixed top-4 right-4 z-50 lg:hidden flex gap-2 bg-black/80 backdrop-blur-md border border-gray-900 rounded-md overflow-hidden">
+        <button
+          onClick={() => handleLocaleChange('en')}
+          className={cn(
+            'px-3 py-2 text-xs font-medium transition-colors',
+            locale === 'en' ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-800',
+          )}
+        >
+          EN
+        </button>
+        <button
+          onClick={() => handleLocaleChange('ko')}
+          className={cn(
+            'px-3 py-2 text-xs font-medium transition-colors',
+            locale === 'ko' ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-800',
+          )}
+        >
+          KO
+        </button>
+      </div>
+
+      {/* Mobile Social Links - Bottom Right */}
+      <div className="fixed bottom-4 right-4 z-50 lg:hidden flex gap-4 bg-black/80 backdrop-blur-md border border-gray-900 rounded-full px-4 py-3">
+        {socialLinks.map((link) => {
+          const Icon = link.icon;
+          return (
+            <a
+              key={link.name}
+              href={link.href}
+              className={`text-gray-500 transition-colors ${link.color}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="sr-only">{link.name}</span>
+              <Icon className="h-5 w-5" />
+            </a>
+          );
+        })}
+      </div>
     </>
   );
 }
