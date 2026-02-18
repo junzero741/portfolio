@@ -6,6 +6,7 @@ export interface ExperienceItem {
   website?: string;
   startDate: string;
   endDate: string | 'Present';
+  logo: string;
 }
 
 export const experiences: ExperienceItem[] = [
@@ -17,6 +18,7 @@ export const experiences: ExperienceItem[] = [
     website: 'https://www.berapt.com',
     startDate: '2022-09',
     endDate: '2025-12',
+    logo: '/logos/beraptLogo.png',
   },
   {
     id: 'work-2',
@@ -26,5 +28,6 @@ export const experiences: ExperienceItem[] = [
     website: 'https://jejodo.life',
     startDate: '2021-09',
     endDate: '2022-09',
+    logo: '/logos/hoikLogo.png',
   },
 ];

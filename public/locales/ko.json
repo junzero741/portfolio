@@ -68,7 +68,7 @@
       }
     },
     "jejodo": {
-      "title": "Jejodo",
+      "title": "제조도",
       "subTitle": "인디워커 기록 아카이빙 플랫폼",
       "company": "획기획 / 제조도",
       "summary": "인디워커 기록 아카이빙 플랫폼의 웹 프론트엔드 개발.",
@@ -76,7 +76,7 @@
         "role1": "웹 프론트엔드 단독 개발",
         "role2": "JavaScript에서 TypeScript로 점진적 마이그레이션",
         "role3": "메모이제이션을 활용한 컴포넌트 렌더링 최적화",
-        "role4": "블록체인 통합"
+        "role4": "블록체인 연동"
       },
       "achievements": {
         "achievement1": "가입자 수 xx명 달성"
