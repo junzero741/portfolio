@@ -105,7 +105,7 @@ export default function Sidebar() {
             <button
               onClick={() => handleLocaleChange('en')}
               className={cn(
-                "block w-full text-left px-4 py-2 text-sm font-medium",
+                "block w-full text-center px-4 py-2 text-sm font-medium",
                 locale === 'en'
                   ? "bg-gray-700 text-white"
                   : "text-gray-300 hover:bg-gray-800"
@@ -116,7 +116,7 @@ export default function Sidebar() {
             <button
               onClick={() => handleLocaleChange('ko')}
               className={cn(
-                "block w-full text-left px-4 py-2 text-sm font-medium",
+                "block w-full text-center px-4 py-2 text-sm font-medium",
                 locale === 'ko'
                   ? "bg-gray-700 text-white"
                   : "text-gray-300 hover:bg-gray-800"
