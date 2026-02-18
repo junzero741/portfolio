@@ -46,7 +46,10 @@
         "achievement1": "30K MAU",
         "achievement2": "paid membership account of xx",
         "achievement3": "xx popular webtoon/illustration artists"
-      }
+      },
+      "feedRole": "Developed interactions such as bookmarks, Picks (votes), and likes for each post in the post list, and implemented RBAC (Role-Based Access Control) system to optimize the rendering of UI elements based on user permissions.",
+      "pickPostUploadRole": "Developed post upload and edit features, and implemented sharing functionality to allow users to easily promote their posts on social media.",
+      "shopRole": "Independently developed all store features including product listing, details, cart, and payment. Specifically, optimized real-time stock checking and price calculation logic to improve user experience in the cart feature."
     },
     "shoulder": {
       "title": "Shoulder",
