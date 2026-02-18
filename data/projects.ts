@@ -17,6 +17,7 @@ export interface ProjectItem {
   roles: string[];
   achievements: string[];
   links?: ProjectLink[];
+  logo: string;
 }
 
 export const projects: ProjectItem[] = [
@@ -42,6 +43,7 @@ export const projects: ProjectItem[] = [
       'projects.shoulderPick.achievements.achievement3',
     ],
     links: [{ label: 'projects.serviceLink', href: 'https://pick.shoulder.fan/' }],
+    logo: '/logos/shoulderPickLogo.png',
   },
   {
     id: 'shoulder',
@@ -66,6 +68,7 @@ export const projects: ProjectItem[] = [
       'projects.shoulder.achievements.achievement3',
     ],
     links: [{ label: 'projects.serviceLink', href: 'https://shoulder.fan/' }],
+    logo: '/logos/shoulderLogo.png',
   },
   {
     id: 'jejodo',
@@ -84,5 +87,6 @@ export const projects: ProjectItem[] = [
     ],
     achievements: ['projects.jejodo.achievements.achievement1'],
     links: [{ label: 'projects.serviceLink', href: 'https://www.jejodo.life' }],
+    logo: '/logos/jejodoLogo.jpg',
   },
 ];

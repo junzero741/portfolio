@@ -6,6 +6,7 @@ import { ProjectItem } from '@/data/projects';
 import { cn } from '@/lib/utils';
 import { ExternalLink } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 
@@ -56,16 +57,27 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
             <div className="flex flex-col justify-between h-full">
               <div className="space-y-4">
                 {/* Header */}
-                <div>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
-                    <span>{t(project.company)}</span>
-                    <span>•</span>
-                    <span>{project.period}</span>
+                <div className="flex justify-between items-center">
+                  <div>
+                    <div className="flex items-center gap-2 text-sm text-gray-400">
+                      <span>{t(project.company)}</span>
+                      <span>•</span>
+                      <span>{project.period}</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mt-1">{t(project.title)}</h3>
+                    {project.subtitle && (
+                      <p className="text-sm text-gray-400 mt-1">{t(project.subtitle)}</p>
+                    )}
                   </div>
-                  <h3 className="text-2xl font-bold text-white mt-1">{t(project.title)}</h3>
-                  {project.subtitle && (
-                    <p className="text-sm text-gray-400 mt-1">{t(project.subtitle)}</p>
-                  )}
+                  <div className="relative h-16 p-2 bg-white rounded-2xl overflow-hidden">
+                    <Image
+                      src={project.logo}
+                      alt={`${project.title} logo`}
+                      width={80}
+                      height={80}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
                 </div>
 
                 {/* Summary */}
