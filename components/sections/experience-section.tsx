@@ -1,17 +1,15 @@
-import { Briefcase, GraduationCap } from "lucide-react";
-import ExperienceTimeline from "@/components/experience-timeline";
-import type { ExperienceItem } from "@/data/experience";
-import { useTranslations } from "next-intl";
+import { Briefcase, GraduationCap } from 'lucide-react';
+import ExperienceTimeline from '@/components/experience-timeline';
+import type { ExperienceItem } from '@/data/experience';
+import { useTranslations } from 'next-intl';
 
 interface ExperienceSectionProps {
   experiences: ExperienceItem[];
 }
 
-export default function ExperienceSection({
-  experiences,
-}: ExperienceSectionProps) {
+export default function ExperienceSection({ experiences }: ExperienceSectionProps) {
   const t = useTranslations();
-  
+
   return (
     <div id="experience" className="mx-auto max-w-6xl px-6 py-12">
       <section className="mb-20">
@@ -19,7 +17,7 @@ export default function ExperienceSection({
           <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-800 shadow-lg">
             <Briefcase className="h-6 w-6 text-white" />
           </div>
-          <h2 className="text-3xl font-bold text-white">{t("navigation.experience")}</h2>
+          <h2 className="text-3xl font-bold text-white">{t('navigation.experience')}</h2>
         </div>
         <ExperienceTimeline items={experiences} />
       </section>

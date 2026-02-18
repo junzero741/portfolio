@@ -1,4 +1,4 @@
-export type ActivityType = "activity" | "award" | "certificate";
+export type ActivityType = 'activity' | 'award' | 'certificate';
 
 export interface ActivityItem {
   id: string;
@@ -8,7 +8,7 @@ export interface ActivityItem {
   date?: string;
   description?: string[];
   link?: string;
-  gradient: "blue" | "purple" | "orange" | "green";
+  gradient: 'blue' | 'purple' | 'orange' | 'green';
 }
 
 export const activities: ActivityItem[] = [];
@@ -17,21 +17,21 @@ export const awards: ActivityItem[] = [];
 
 export const certificates: ActivityItem[] = [
   {
-    id: "cert-sqld",
-    type: "certificate",
-    title: "SQLD",
-    organization: "한국데이터산업진흥원",
-    date: "",
+    id: 'cert-sqld',
+    type: 'certificate',
+    title: 'SQLD',
+    organization: '한국데이터산업진흥원',
+    date: '',
     description: [],
-    gradient: "blue",
+    gradient: 'blue',
   },
   {
-    id: "cert-toeic",
-    type: "certificate",
-    title: "TOEIC 860",
-    organization: "ETS",
-    date: "",
+    id: 'cert-toeic',
+    type: 'certificate',
+    title: 'TOEIC 860',
+    organization: 'ETS',
+    date: '',
     description: [],
-    gradient: "green",
+    gradient: 'green',
   },
 ];

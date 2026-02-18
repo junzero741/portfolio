@@ -1,50 +1,49 @@
-"use client";
+'use client';
 
-import { Link, usePathname, useRouter } from "@/lib/i18n/navigation";
-import { cn } from "@/lib/utils";
-import { BookOpen, Github, Mail } from "lucide-react";
+import { Link, usePathname, useRouter } from '@/lib/i18n/navigation';
+import { cn } from '@/lib/utils';
+import { BookOpen, Github, Mail } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const socialLinks = [
   {
-    name: "GitHub",
-    href: "https://github.com/junzero741",
+    name: 'GitHub',
+    href: 'https://github.com/junzero741',
     icon: Github,
-    color: "hover:text-gray-400",
+    color: 'hover:text-gray-400',
   },
   {
-    name: "Blog",
-    href: "https://til-dev.tistory.com/",
+    name: 'Blog',
+    href: 'https://til-dev.tistory.com/',
     icon: BookOpen,
-    color: "hover:text-gray-400",
+    color: 'hover:text-gray-400',
   },
   {
-    name: "Email",
-    href: "mailto:junzero741@gmail.com",
+    name: 'Email',
+    href: 'mailto:junzero741@gmail.com',
     icon: Mail,
-    color: "hover:text-gray-400",
+    color: 'hover:text-gray-400',
   },
 ];
 
 const navigation = [
-  { href: "/#experience", key: "navigation.experience", id: "experience" },
-  { href: "/#projects", key: "navigation.projects", id: "projects" },
+  { href: '/#experience', key: 'navigation.experience', id: 'experience' },
+  { href: '/#projects', key: 'navigation.projects', id: 'projects' },
 ];
 
 export default function Sidebar() {
-
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
   const t = useTranslations();
-  const [activeSection, setActiveSection] = useState<string>("");
+  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navigation.map(nav => nav.id);
+      const sections = navigation.map((nav) => nav.id);
       const scrollPosition = window.scrollY + 100; // offset for better detection
-      
+
       for (const sectionId of sections) {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -62,7 +61,6 @@ export default function Sidebar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
   const handleLocaleChange = (newLocale: 'en' | 'ko') => {
     if (locale !== newLocale) {
       router.push(pathname, { locale: newLocale });
@@ -76,9 +74,7 @@ export default function Sidebar() {
         {/* Logo */}
         <div className="flex items-center justify-center p-6">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="text-2xl font-bold text-white">
-              Jung Junyoung
-            </span>
+            <span className="text-2xl font-bold text-white">Jung Junyoung</span>
           </Link>
         </div>
 
@@ -89,10 +85,10 @@ export default function Sidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-sm font-semibold leading-6 transition-colors block w-full text-center px-4 py-2 rounded-md",
+                'text-sm font-semibold leading-6 transition-colors block w-full text-center px-4 py-2 rounded-md',
                 activeSection === item.id
-                  ? "bg-gray-700 text-white"
-                  : "text-gray-400 hover:text-white hover:bg-gray-800"
+                  ? 'bg-gray-700 text-white'
+                  : 'text-gray-400 hover:text-white hover:bg-gray-800',
               )}
             >
               {t(item.key)}
@@ -100,29 +96,25 @@ export default function Sidebar() {
           ))}
         </div>
 
-         {/* Language selector for desktop */}
+        {/* Language selector for desktop */}
         <div className="relative w-full flex justify-center py-4">
-            <button
-              onClick={() => handleLocaleChange('en')}
-              className={cn(
-                "block w-full text-center px-4 py-2 text-sm font-medium",
-                locale === 'en'
-                  ? "bg-gray-700 text-white"
-                  : "text-gray-300 hover:bg-gray-800"
-              )}
-            >
-              EN
-            </button>
-            <button
-              onClick={() => handleLocaleChange('ko')}
-              className={cn(
-                "block w-full text-center px-4 py-2 text-sm font-medium",
-                locale === 'ko'
-                  ? "bg-gray-700 text-white"
-                  : "text-gray-300 hover:bg-gray-800"
-              )}
-            >
-              한국어
+          <button
+            onClick={() => handleLocaleChange('en')}
+            className={cn(
+              'block w-full text-center px-4 py-2 text-sm font-medium',
+              locale === 'en' ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-800',
+            )}
+          >
+            EN
+          </button>
+          <button
+            onClick={() => handleLocaleChange('ko')}
+            className={cn(
+              'block w-full text-center px-4 py-2 text-sm font-medium',
+              locale === 'ko' ? 'bg-gray-700 text-white' : 'text-gray-300 hover:bg-gray-800',
+            )}
+          >
+            한국어
           </button>
         </div>
 
@@ -149,9 +141,7 @@ export default function Sidebar() {
             © {new Date().getFullYear()} 정준영. All rights reserved.
           </p>
         </div>
-
-       
-          </aside>
+      </aside>
     </>
   );
 }

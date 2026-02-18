@@ -1,12 +1,9 @@
 {
   "navigation": {
-    
     "experience": "Experience",
     "projects": "Projects",
-    
-    
+
     "blog": "Blog"
-    
   },
   "home": {
     "welcome": "Junyoung, a developer who designs trust",
@@ -23,7 +20,6 @@
     },
     "berapt": {
       "name": "Berapt"
-    
     }
   },
   "projects": {
@@ -50,43 +46,43 @@
         "achievement1": "30K MAU",
         "achievement2": "paid membership account of xx",
         "achievement3": "xx popular webtoon/illustration artists"
+      }
+    },
+    "shoulder": {
+      "title": "Shoulder",
+      "subTitle": "Creator Support Website",
+      "company": "Berapt",
+      "summary": "Launching and maintaining a creator support platform",
+      "roles": {
+        "role1": "Introducing billboard.js and implementing charts",
+        "role2": "Designing and implementing common feature modules and design system",
+        "role3": "Introducing Storybook-based component testing",
+        "role4": "Migrating from React to Next.js",
+        "role5": "Developing custom Froala emoji plugin",
+        "role6": "Integrating external PG payment system and optimizing logic"
+      },
+      "achievements": {
+        "achievement1": "200K users",
+        "achievement2": "xx popular webtoon/illustration artists",
+        "achievement3": "monthly paid service revenue of xx"
+      }
+    },
+    "jejodo": {
+      "title": "Jejodo",
+      "subTitle": "A platform for archiving indie worker records.",
+      "company": "획기획 / Jejodo",
+      "summary": "Web frontend development for an indie worker archiving platform.",
+      "roles": {
+        "role1": "Web frontend solo development",
+        "role2": "Gradual migration from JavaScript to TypeScript",
+        "role3": "Optimizing component rendering using memoization",
+        "role4": "Blockchain integration"
+      },
+      "achievements": {
+        "achievement1": "xxK users"
+      }
     }
   },
-  "shoulder": {
-    "title": "Shoulder",
-    "subTitle": "Creator Support Website",
-    "company": "Berapt",
-    "summary": "Launching and maintaining a creator support platform",
-    "roles": {
-      "role1": "Introducing billboard.js and implementing charts",
-      "role2": "Designing and implementing common feature modules and design system",
-      "role3": "Introducing Storybook-based component testing",
-      "role4": "Migrating from React to Next.js",
-      "role5": "Developing custom Froala emoji plugin",
-      "role6": "Integrating external PG payment system and optimizing logic"
-    },
-    "achievements": {
-      "achievement1": "200K users",
-      "achievement2": "xx popular webtoon/illustration artists",
-      "achievement3": "monthly paid service revenue of xx"
-  }
-  },
-    "jejodo": {
-    "title": "Jejodo",
-    "subTitle": "A platform for archiving indie worker records.",
-    "company": "획기획 / Jejodo",
-    "summary": "Web frontend development for an indie worker archiving platform.",
-    "roles": {
-      "role1": "Web frontend solo development",
-      "role2": "Gradual migration from JavaScript to TypeScript",
-      "role3": "Optimizing component rendering using memoization",
-      "role4": "Blockchain integration"
-    },
-    "achievements": {
-      "achievement1": "xxK users"
-  }
-  }
-},
   "blog": {
     "title": "Junyoung's Knowledge Blog"
   },
@@ -94,4 +90,3 @@
     "copyright": "© {year} Portfolio. All rights reserved."
   }
 }
-

@@ -1,12 +1,9 @@
 {
   "navigation": {
-    
     "experience": "경력",
     "projects": "프로젝트",
-    
-    
+
     "blog": "블로그"
-    
   },
   "home": {
     "welcome": "신뢰를 설계하는 개발자, 정준영",
@@ -19,11 +16,10 @@
   },
   "company": {
     "jejodo": {
-      "name": "획기획 / 제조도"
+      "name": "획기획"
     },
     "berapt": {
       "name": "비랩트"
-    
     }
   },
   "projects": {
@@ -34,7 +30,7 @@
     "role": "담당 역할",
     "achievements": "성과",
     "serviceLink": "서비스 링크",
-        "shoulderPick": {
+    "shoulderPick": {
       "title": "숄더픽",
       "subTitle": "서브컬쳐 일러스트 웹사이트",
       "company": "비랩트 (Berapt)",
@@ -50,42 +46,42 @@
         "achievement1": "30K MAU 달성",
         "achievement2": "유료 멤버십 가입 유저 xx명 달성",
         "achievement3": "인기 웹툰/일러스트 작가 xx명 가입"
-    }
-  },
+      }
+    },
     "shoulder": {
-    "title": "숄더",
-    "subTitle": "작가 응원 웹사이트",
-    "company": "비랩트 (Berapt)",
-    "summary": "작가 응원 플랫폼 런칭 및 유지보수",
-    "roles": {
-      "role1": "billboard.js 도입 및 차트 구현",
-      "role2": "공통 기능 모듈 및 디자인 시스템 설계 및 구현",
-      "role3": "Storybook 기반 컴포넌트 테스트 도입",
-      "role4": "React에서 Next.js로 마이그레이션",
-      "role5": "커스텀 Froala 이모지 플러그인 개발",
-      "role6": "외부 PG 결제 시스템 연동 및 로직 최적화"
+      "title": "숄더",
+      "subTitle": "작가 응원 웹사이트",
+      "company": "비랩트 (Berapt)",
+      "summary": "작가 응원 플랫폼 런칭 및 유지보수",
+      "roles": {
+        "role1": "billboard.js 도입 및 차트 구현",
+        "role2": "공통 기능 모듈 및 디자인 시스템 설계 및 구현",
+        "role3": "Storybook 기반 컴포넌트 테스트 도입",
+        "role4": "React에서 Next.js로 마이그레이션",
+        "role5": "커스텀 Froala 이모지 플러그인 개발",
+        "role6": "외부 PG 결제 시스템 연동 및 로직 최적화"
+      },
+      "achievements": {
+        "achievement1": "가입자 수 20만 명 달성",
+        "achievement2": "인기 웹툰/일러스트 작가 xx명 가입",
+        "achievement3": "월간 유료 서비스 수익 xx 달성"
+      }
     },
-    "achievements": {
-      "achievement1": "가입자 수 20만 명 달성",
-      "achievement2": "인기 웹툰/일러스트 작가 xx명 가입",
-      "achievement3": "월간 유료 서비스 수익 xx 달성"
-  }
-  },
-   "jejodo": {
-    "title": "Jejodo",
-    "subTitle": "인디워커 기록 아카이빙 플랫폼",
-    "company": "획기획 / 제조도",
-    "summary": "인디워커 기록 아카이빙 플랫폼의 웹 프론트엔드 개발.",
-    "roles": {
-      "role1": "웹 프론트엔드 단독 개발",
-      "role2": "JavaScript에서 TypeScript로 점진적 마이그레이션",
-      "role3": "메모이제이션을 활용한 컴포넌트 렌더링 최적화",
-      "role4": "블록체인 통합"
-    },
-    "achievements": {
-      "achievement1": "가입자 수 xx명 달성"
-  }
-  }
+    "jejodo": {
+      "title": "Jejodo",
+      "subTitle": "인디워커 기록 아카이빙 플랫폼",
+      "company": "획기획 / 제조도",
+      "summary": "인디워커 기록 아카이빙 플랫폼의 웹 프론트엔드 개발.",
+      "roles": {
+        "role1": "웹 프론트엔드 단독 개발",
+        "role2": "JavaScript에서 TypeScript로 점진적 마이그레이션",
+        "role3": "메모이제이션을 활용한 컴포넌트 렌더링 최적화",
+        "role4": "블록체인 통합"
+      },
+      "achievements": {
+        "achievement1": "가입자 수 xx명 달성"
+      }
+    }
   },
   "blog": {
     "title": "준영의 지식 블로그"
@@ -94,4 +90,3 @@
     "copyright": "© {year} Portfolio. All rights reserved."
   }
 }
-
