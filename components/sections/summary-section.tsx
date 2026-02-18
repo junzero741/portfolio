@@ -75,7 +75,7 @@ export default function SummarySection({
        
 
 	 {/* 프로필 사진 카드 */}
-        <div className="animate-fade-in-up" style={{ animationDelay: `${4 * 0.1}s` }}>
+        <div className="animate-fade-in-up" style={{ animationDelay: `${2 * 0.1}s` }}>
           <SummaryCard>
             <div className="flex items-center justify-center h-full">
               <div className="relative w-[240px] aspect-[3/4] overflow-hidden">
@@ -98,7 +98,7 @@ export default function SummarySection({
           <div
             key={category.title}
             className="animate-fade-in-up"
-            style={{ animationDelay: `${(5 + index) * 0.1}s` }}
+            style={{ animationDelay: `${(3 + index) * 0.1}s` }}
           >
               <div className="flex flex-col gap-2">
 				<div className="flex items-center justify-between">
