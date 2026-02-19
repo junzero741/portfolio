@@ -18,6 +18,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'JS', icon: '/icons/javascript.svg' },
       { name: 'React', icon: '/icons/react.svg' },
       { name: 'Next', icon: '/icons/nextdotjs.svg' },
+      { name: 'i18next', icon: '/icons/i18next.svg' },
     ],
   },
   {
