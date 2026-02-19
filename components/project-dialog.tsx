@@ -52,9 +52,9 @@ export default function ProjectDialog({
                       alt={`${selectedProject.title} screenshot ${idx + 1}`}
                       width={1200}
                       height={800}
-                      className={cn('w-full h-auto object-contain h-[400px] md:h-auto')}
+                      className={cn('w-full h-auto object-contain h-[300px] md:h-[400px] ')}
                     />
-                    <p className="pre-wrap">{t(screenshot.description)}</p>
+                    <p className={cn('pre-wrap text-sm')}>{t(screenshot.description)}</p>
                   </div>
                 ))}
               </div>

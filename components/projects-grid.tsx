@@ -66,7 +66,7 @@ export default function ProjectsGrid({ items }: ProjectsGridProps) {
                 {/* Header */}
                 <div className="flex justify-between items-center">
                   <div>
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <div className={cn('flex items-center gap-2 text-xs md:text-sm text-gray-400')}>
                       <span>{t(project.company)}</span>
                       <span>•</span>
                       <span>{project.period}</span>
