@@ -68,7 +68,10 @@
         "achievement1": "200K users",
         "achievement2": "xx popular webtoon/illustration artists",
         "achievement3": "monthly paid service revenue of xx"
-      }
+      },
+      "gardenMainRole": "Developed the post list and detail pages of the creator main page, with a focus on abstracting the board module to allow for the development of various board types in the future.",
+      "gardenPostUploadRole": "Developed a custom plugin that allows emoticons to be inserted into the WYSIWYG editor, and designed and implemented a system where creators can create their own stickers, and users can rent and purchase stickers.",
+      "gardenSubscribeRole": "Developed a creator subscription (recurring payment) system, and optimized the payment logic to handle various exceptions that may occur during payment attempts, focusing on improving user experience."
     },
     "jejodo": {
       "title": "Jejodo",

@@ -89,6 +89,20 @@ export const projects: ProjectItem[] = [
     ],
     link: { label: 'projects.serviceLink', href: 'https://shoulder.fan/' },
     logo: '/logos/shoulderLogo.png',
+    screenshots: [
+      {
+        src: '/screenshots/shoulderGardenMain.gif',
+        description: 'projects.shoulder.gardenMainRole',
+      },
+      {
+        src: '/screenshots/shoulderGardenPostUpload.gif',
+        description: 'projects.shoulder.gardenPostUploadRole',
+      },
+      {
+        src: '/screenshots/shoulderGardenSubscribe.gif',
+        description: 'projects.shoulder.gardenSubscribeRole',
+      },
+    ],
   },
   {
     id: 'jejodo',
