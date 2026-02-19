@@ -8,7 +8,6 @@ export interface ActivityItem {
   date?: string;
   description?: string[];
   link?: string;
-  gradient: 'blue' | 'purple' | 'orange' | 'green';
 }
 
 export const activities: ActivityItem[] = [];
@@ -23,7 +22,6 @@ export const certificates: ActivityItem[] = [
     organization: '한국데이터산업진흥원',
     date: '',
     description: [],
-    gradient: 'blue',
   },
   {
     id: 'cert-toeic',
@@ -32,6 +30,5 @@ export const certificates: ActivityItem[] = [
     organization: 'ETS',
     date: '',
     description: [],
-    gradient: 'green',
   },
 ];
